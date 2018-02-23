@@ -14,7 +14,7 @@ Memory game is a game built for fun, using HTML, CSS, and JavaScript. The object
 
 You can find a demo for this game at https://www.youtube.com/watch?time_continue=2&v=nZY0-TJtsgM
 
-##License
+## License
 
 The content of this repository is licensed under [LICENSE](/LICENSE) file
 
