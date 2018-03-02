@@ -90,6 +90,8 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .deck .card.match {

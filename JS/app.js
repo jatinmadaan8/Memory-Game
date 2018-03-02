@@ -1,5 +1,5 @@
-var symbols =['facebook', 'facebook', 'twitter', 'twitter', 'snapchat', 'snapchat', 'instagram', 'instagram', 'whatsapp', 'whatsapp', 'linkedin', 'linkedin', 'google-plus', 'google-plus', 'youtube', 'youtube'];
-var gameCards = symbols.length / 2,
+let symbols =['facebook', 'facebook', 'twitter', 'twitter', 'snapchat', 'snapchat', 'instagram', 'instagram', 'whatsapp', 'whatsapp', 'linkedin', 'linkedin', 'google-plus', 'google-plus', 'youtube', 'youtube'];
+let gameCards = symbols.length / 2,
     stars3 = gameCards + 2,
     stars2 = gameCards + 6,
     stars1 = gameCards + 10,
@@ -7,9 +7,13 @@ var gameCards = symbols.length / 2,
     moves = 0,
     sec =0;
 
+//Initialization of game
+
 function initGame(){
   assign();
 }
+
+//Shuffle cards
 
 function shuffle(array){
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -23,6 +27,9 @@ function shuffle(array){
   }
 return array;
 }
+
+
+//Assign Cards
 
 function assign(){
   var cards = shuffle(symbols);
@@ -53,12 +60,13 @@ function starRating() {
 }
 
 //Card Listner
+
  function cardListner() {
    var clicked =0,nodes =[];
    $('.card').on('click' ,function(){
      $(this).addClass('open show');
      nodes.push(this);
-      clicked++;
+     clicked++;
 
 //Match Cards
 
@@ -72,6 +80,7 @@ function starRating() {
       $('.deck').find('.match').removeClass('show');
     }, 800);
       match++;
+      $('.deck').find('.match').off('click');
     }
     else{
       setTimeout(function() {
@@ -86,10 +95,8 @@ function starRating() {
   clicked =0;
   nodes = [];
       }
-
 		});
 	}
-
 
   //timer
 
@@ -109,8 +116,9 @@ $('.restart').on('click',function(){
 
 
 //endGame
+
 function endGame() {
-  alert("Congratulation !!\nYou have completed the game with"+moves+" Moves");
+  alert("Congratulation !!\nYou have completed the game with "+moves+" Moves and "+$('.stars li').length+" Stars in "+sec+" Seconds");
   var r = confirm("Wanna start the game again");
 if (r == true) {
     location.reload();
